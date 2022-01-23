@@ -1,12 +1,12 @@
 /*
 Title: 
-    Exercise 2.4
+    Exercise 3.2
 Author: 
     Adam Rodgers
 Date: 
-    01/15/2022
+    01/23/2022
 Modified By: Adam Rodgers
-Description: Composer List in Angular
+Description: Enhanced Composer App in Angular
 Resources:
     Bellevue University WEB425 Github Repo
     Prof Krasso's YouTube
