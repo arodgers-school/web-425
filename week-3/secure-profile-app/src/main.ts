@@ -1,12 +1,12 @@
 /*
 Title: 
-    Exercise 2.3
+    Exercise 3.3
 Author: 
     Adam Rodgers
 Date: 
-    01/15/2022
+    01/22/2022
 Modified By: Adam Rodgers
-Description: Enhanced Profile App
+Description: Secure Profile App in Angular
 Resources:
     Bellevue University WEB425 Github Repo
     Prof Krasso's YouTube
