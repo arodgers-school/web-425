@@ -13,15 +13,8 @@ Resources:
 */
 
 import { Component, OnInit } from '@angular/core';
-
-export default class Composer {
-  fullName: string;
-  genre: string;
-  constructor(fullName: string, genre: string) {
-    this.fullName = fullName;
-    this.genre = genre;
-  }
-}
+import { IComposer } from '../composer.interface';
+import { Composer } from '../composer.class';
 
 @Component({
   selector: 'app-composer-list',
@@ -29,15 +22,10 @@ export default class Composer {
   styleUrls: ['./composer-list.component.css'],
 })
 export class ComposerListComponent implements OnInit {
-  composerList: Array<Composer>;
+  composers: Array<IComposer>;
+
   constructor() {
-    this.composerList = [
-      new Composer('Pyotr Ilyich Tchaikovsky', 'Classical'),
-      new Composer('Antonio Vivaldi', 'Classical'),
-      new Composer('Claude Debussy', 'Classical'),
-      new Composer('Richard Wagner', 'Classical'),
-      new Composer('Johann Sebastian Bach', 'Classical'),
-    ];
+    this.composers = new Composer().getComposers();
   }
 
   ngOnInit(): void {}
