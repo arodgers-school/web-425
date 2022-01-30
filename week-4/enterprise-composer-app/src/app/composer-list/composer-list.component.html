@@ -5,19 +5,17 @@
     </div>
 
     <table class="table table-bordered">
-      <thead class="thead-dark">
+      <thead class="table-dark">
         <tr>
           <th scope="col">Composer ID</th>
           <th scope="col">Name</th>
           <th scope="col">Genre</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let composer of composers">
+      <tbody *ngFor="let composer of composers | async">
+        <tr>
           <td>
-            <a routerLink="/composer-details/{{ composer.composerId }}">{{
-              composer.composerId
-            }}</a>
+            <a routerLink="/composer-details/{{ composer.composerId }}">{{ composer.composerId }}</a>
           </td>
           <td>{{ composer.fullName }}</td>
           <td>{{ composer.genre }}</td>
