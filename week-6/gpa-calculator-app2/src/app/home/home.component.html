@@ -31,6 +31,9 @@
   </div>
 
   <div fxFlex class="grade-summary">
+    <button mat-button color="primary" (click)="clearEntries()">
+      Clear Transcript
+    </button>
     <app-grade-summary
       *ngFor="let entry of transcriptEntries"
       [course]="entry.course"
@@ -41,6 +44,9 @@
 <br />
 <div fxLayout="column" fxlayoutGap="20px">
   <div fxFlex class="gpa">
-    <app-gpa></app-gpa>
+    <button mat-button color="primary" (click)="calculateResults()">
+      Calculate GPA
+    </button>
+    <app-gpa [gpaTotal]="gpaTotal"></app-gpa>
   </div>
 </div>
