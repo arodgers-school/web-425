@@ -1,12 +1,14 @@
 /*
 Title: 
     Exercise 6.3
+    Assignment 6.4
 Author: 
     Adam Rodgers
 Date: 
     02/12/2022
 Modified By: Adam Rodgers
 Description: GPA Calculator App
+             GPA Calculator App Pt 2
 Resources:
     Bellevue University WEB425 Github Repo
     Prof Krasso's YouTube
@@ -26,6 +28,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { GpaComponent } from './gpa/gpa.component';
+import { GradeSummaryComponent } from './grade-summary/grade-summary.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -34,6 +43,8 @@ import { MatButtonModule } from '@angular/material/button';
     BaseLayoutComponent,
     NotFoundComponent,
     HomeComponent,
+    GpaComponent,
+    GradeSummaryComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +54,11 @@ import { MatButtonModule } from '@angular/material/button';
     FlexLayoutModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    FormsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
