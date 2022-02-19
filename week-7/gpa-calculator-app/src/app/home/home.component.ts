@@ -1,12 +1,15 @@
 /*
 Title: 
     Assignment 6.4
+    Assignment 7.3
 Author: 
     Adam Rodgers
 Date: 
     02/12/2022
+    02/19/2022
 Modified By: Adam Rodgers
 Description: GPA Calculator App Pt 2
+             GPA Calculator
 Resources:
     Bellevue University WEB425 Github Repo
     Prof Krasso's YouTube
@@ -14,6 +17,7 @@ Resources:
 
 import { Component, OnInit } from '@angular/core';
 import { ITranscript } from '../transcript.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +25,6 @@ import { ITranscript } from '../transcript.interface';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  transcriptEntry: ITranscript;
   selectableGrades: Array<string> = [
     'A',
     'A-',
@@ -38,14 +41,20 @@ export class HomeComponent implements OnInit {
   ];
   transcriptEntries: Array<ITranscript> = [];
   gpaTotal: number = 0;
+  transcriptForm: FormGroup;
 
-  constructor() {
-    this.transcriptEntry = {} as ITranscript;
+  constructor(private fb: FormBuilder) {}
+
+  onSubmit(event) {
+    this.transcriptEntries.push({
+      course: this.form.course.value,
+      grade: this.form.grade.value,
+    });
+    event.currentTarget.reset();
   }
 
-  saveEntry() {
-    this.transcriptEntries.push(this.transcriptEntry);
-    this.transcriptEntry = {} as ITranscript;
+  get form() {
+    return this.transcriptForm.controls;
   }
 
   calculateResults() {
@@ -99,5 +108,10 @@ export class HomeComponent implements OnInit {
     this.gpaTotal = 0;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.transcriptForm = this.fb.group({
+      course: ['', Validators.required],
+      grade: ['', Validators.required],
+    });
+  }
 }
