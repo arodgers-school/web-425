@@ -67,7 +67,7 @@ import { CookieService } from 'ngx-cookie-service';
     MatSelectModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

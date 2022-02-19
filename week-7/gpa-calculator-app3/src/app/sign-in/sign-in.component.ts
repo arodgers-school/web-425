@@ -45,7 +45,7 @@ export class SignInComponent implements OnInit {
     const studentId = parseInt(formValues.studentId);
 
     if (this.signinService.validate(studentId)) {
-      this.cookieService.set('session user', studentId.toString(), 1);
+      this.cookieService.set('session_user', studentId.toString(), 1);
       this.router.navigate(['/']);
     } else {
       this.errorMessage =
