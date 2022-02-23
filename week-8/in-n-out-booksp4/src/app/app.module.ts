@@ -3,16 +3,19 @@ Title:
     Exercise 5.2
     Assignment 5.4
     Exercise 6.2
+    Exercise 8.2
 Author: 
     Adam Rodgers
 Date: 
     02/5/2022
     02/6/2022
     02/12/2022
+    02/23/2022
 Modified By: Adam Rodgers
 Description: Angular Material - Navigation and Layout
              Angular Material - Dialogs
              Input/Output Properties, Pt 1
+             In-n-Out-Books Final Version
 Resources:
     Bellevue University WEB425 Github Repo
     Prof Krasso's YouTube
@@ -42,6 +45,8 @@ import { WishlistCreateComponent } from './wishlist-create/wishlist-create.compo
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -68,6 +73,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
